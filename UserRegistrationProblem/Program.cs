@@ -24,11 +24,11 @@ namespace UserRegistrationProblem
             }
 
             Console.WriteLine("Enter your emailId : ");
-            string email = Console.ReadLine();
-            while (!v.EmailIDValidation(email))
+            string emailid = Console.ReadLine();
+            while (!v.EmailIDValidation(emailid))
             {
                 Console.WriteLine("Enter a valid emailID : ");
-                email = Console.ReadLine();
+                emailid = Console.ReadLine();
             }
         }
     }
