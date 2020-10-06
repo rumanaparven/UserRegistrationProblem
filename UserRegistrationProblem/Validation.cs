@@ -45,7 +45,7 @@ namespace UserRegistrationProblem
 
         public Boolean PasswordValidation(string pswrd)
         {
-            Regex re = new Regex(@"(^[A-Za-z0-9]{8,}$)");
+            Regex re = new Regex(@"(^(?=.*[A-Z])[A-Za-z0-9@#-+]{8,}$)");
             if (re.IsMatch(pswrd))
                 return true;
             else
