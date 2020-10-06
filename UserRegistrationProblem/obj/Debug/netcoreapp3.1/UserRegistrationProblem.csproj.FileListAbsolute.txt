@@ -10,3 +10,4 @@ C:\Users\RUMANA\source\repos\UserRegistrationProblem\UserRegistrationProblem\obj
 C:\Users\RUMANA\source\repos\UserRegistrationProblem\UserRegistrationProblem\obj\Debug\netcoreapp3.1\UserRegistrationProblem.dll
 C:\Users\RUMANA\source\repos\UserRegistrationProblem\UserRegistrationProblem\obj\Debug\netcoreapp3.1\UserRegistrationProblem.pdb
 C:\Users\RUMANA\source\repos\UserRegistrationProblem\UserRegistrationProblem\obj\Debug\netcoreapp3.1\UserRegistrationProblem.genruntimeconfig.cache
+C:\Users\RUMANA\source\repos\UserRegistrationProblem\UserRegistrationProblem\obj\Debug\netcoreapp3.1\UserRegistrationProblem.csprojAssemblyReference.cache
