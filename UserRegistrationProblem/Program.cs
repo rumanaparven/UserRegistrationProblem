@@ -38,6 +38,14 @@ namespace UserRegistrationProblem
                 Console.WriteLine("Enter a valid mobile number : ");
                 num = Console.ReadLine();
             }
+
+            Console.WriteLine("Enter a password : ");
+            string pswrd = Console.ReadLine();
+            while (!v.PasswordValidation(pswrd))
+            {
+                Console.WriteLine("Enter a valid password : ");
+                pswrd = Console.ReadLine();
+            }
         }
     }
 }

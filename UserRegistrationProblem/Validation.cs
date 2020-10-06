@@ -42,5 +42,14 @@ namespace UserRegistrationProblem
             else
                 return false;
         }
+
+        public Boolean PasswordValidation(string pswrd)
+        {
+            Regex re = new Regex(@"(^[A-Za-z0-9]{8,}$)");
+            if (re.IsMatch(pswrd))
+                return true;
+            else
+                return false;
+        }
     }
 }
