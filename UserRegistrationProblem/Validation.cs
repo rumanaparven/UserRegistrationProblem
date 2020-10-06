@@ -33,5 +33,14 @@ namespace UserRegistrationProblem
             else
                 return false;
         }
+
+        public Boolean MobileNumberValidation(string num)
+        {
+            Regex re = new Regex("^[0-9]{2}\\s[7-9]{1}[0-9]{9}$");
+            if (re.IsMatch(num))
+                return true;
+            else
+                return false;
+        }
     }
 }

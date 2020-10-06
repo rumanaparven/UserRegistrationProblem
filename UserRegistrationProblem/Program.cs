@@ -30,6 +30,14 @@ namespace UserRegistrationProblem
                 Console.WriteLine("Enter a valid emailID : ");
                 emailid = Console.ReadLine();
             }
+
+            Console.WriteLine("Enter your mobile number : ");
+            string num = Console.ReadLine();
+            while (!v.MobileNumberValidation(num))
+            {
+                Console.WriteLine("Enter a valid mobile number : ");
+                num = Console.ReadLine();
+            }
         }
     }
 }
