@@ -1,0 +1,12 @@
+C:\Users\RUMANA\source\repos\UserRegistrationProblem\UserRegistrationProblem\bin\Debug\netcoreapp3.1\UserRegistrationProblem.exe
+C:\Users\RUMANA\source\repos\UserRegistrationProblem\UserRegistrationProblem\bin\Debug\netcoreapp3.1\UserRegistrationProblem.deps.json
+C:\Users\RUMANA\source\repos\UserRegistrationProblem\UserRegistrationProblem\bin\Debug\netcoreapp3.1\UserRegistrationProblem.runtimeconfig.json
+C:\Users\RUMANA\source\repos\UserRegistrationProblem\UserRegistrationProblem\bin\Debug\netcoreapp3.1\UserRegistrationProblem.runtimeconfig.dev.json
+C:\Users\RUMANA\source\repos\UserRegistrationProblem\UserRegistrationProblem\bin\Debug\netcoreapp3.1\UserRegistrationProblem.dll
+C:\Users\RUMANA\source\repos\UserRegistrationProblem\UserRegistrationProblem\bin\Debug\netcoreapp3.1\UserRegistrationProblem.pdb
+C:\Users\RUMANA\source\repos\UserRegistrationProblem\UserRegistrationProblem\obj\Debug\netcoreapp3.1\UserRegistrationProblem.AssemblyInfoInputs.cache
+C:\Users\RUMANA\source\repos\UserRegistrationProblem\UserRegistrationProblem\obj\Debug\netcoreapp3.1\UserRegistrationProblem.AssemblyInfo.cs
+C:\Users\RUMANA\source\repos\UserRegistrationProblem\UserRegistrationProblem\obj\Debug\netcoreapp3.1\UserRegistrationProblem.csproj.CoreCompileInputs.cache
+C:\Users\RUMANA\source\repos\UserRegistrationProblem\UserRegistrationProblem\obj\Debug\netcoreapp3.1\UserRegistrationProblem.dll
+C:\Users\RUMANA\source\repos\UserRegistrationProblem\UserRegistrationProblem\obj\Debug\netcoreapp3.1\UserRegistrationProblem.pdb
+C:\Users\RUMANA\source\repos\UserRegistrationProblem\UserRegistrationProblem\obj\Debug\netcoreapp3.1\UserRegistrationProblem.genruntimeconfig.cache
