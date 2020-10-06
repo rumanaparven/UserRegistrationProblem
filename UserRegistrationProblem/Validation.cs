@@ -27,7 +27,7 @@ namespace UserRegistrationProblem
 
         public Boolean EmailIDValidation(string email)
         {
-            Regex re = new Regex("^([a-z\\d]+)(\\.([a-z\\d_+-\\.]+))?@([a-z\\d-]+)\\.([a-z]{2})((\\.[a-z]{2})?)$");
+            Regex re = new Regex("^([a-z\\d]+)(\\.([a-z\\d_+-\\.]+))?@([a-z\\d-]+)\\.([a-z]{2,3})((\\.[a-z]{2})?)$");
             if (re.IsMatch(email))
                 return true;
             else

@@ -46,6 +46,11 @@ namespace UserRegistrationProblem
                 Console.WriteLine("Enter a valid password : ");
                 pswrd = Console.ReadLine();
             }
+
+            Console.WriteLine("Registration Successful.");
+            Console.WriteLine("Name :" + fname + " " + lname);
+            Console.WriteLine("Email ID : " + emailid);
+            Console.WriteLine("Contact Number : " + num);
         }
     }
 }
