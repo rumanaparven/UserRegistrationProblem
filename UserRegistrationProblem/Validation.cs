@@ -24,5 +24,14 @@ namespace UserRegistrationProblem
             else
                 return false;
         }
+
+        public Boolean EmailIDValidation(string email)
+        {
+            Regex re = new Regex("^([a-z\\d]+)(\\.([a-z\\d_+-\\.]+))?@([a-z\\d-]+)\\.([a-z]{2})((\\.[a-z]{2})?)$");
+            if (re.IsMatch(email))
+                return true;
+            else
+                return false;
+        }
     }
 }
