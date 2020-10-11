@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 
 namespace UserRegistrationProblem
 {
-    class Validation
+    public class Validation
     {
         public Boolean FirstNameValidation(string fname)
         {
@@ -50,6 +50,13 @@ namespace UserRegistrationProblem
                 return true;
             else
                 return false;
+        }
+        public string MoodAnalyser(string message)
+        {
+            if (message.Contains("HAPPY"))
+                return "HAPPY";
+            else
+                return "SAD";
         }
     }
 }
