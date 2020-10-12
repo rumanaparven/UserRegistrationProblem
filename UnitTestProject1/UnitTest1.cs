@@ -23,5 +23,17 @@ namespace UnitTestProject1
             string actual = validation.MoodAnalyser(message);
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod]
+        [DataRow("rumana@gmail.com")]
+        [DataRow("r12@gmail.com")]
+        [DataRow("rumana@gmail")]
+        public void TestMethod3(string email)
+        {
+            bool expected = true;
+            Validation validation = new Validation();
+            bool actual = validation.EmailIDValidation(email);
+            Assert.AreEqual(expected, actual);
+
+        }
     }
 }
