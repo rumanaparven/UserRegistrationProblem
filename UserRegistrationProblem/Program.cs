@@ -7,45 +7,100 @@ namespace UserRegistrationProblem
         static void Main(string[] args)
         {
             Validation v = new Validation();
-            Console.WriteLine("Enter your First Name : ");
-            string fname = Console.ReadLine();
-            while (!v.FirstNameValidation(fname))
+            string fname, lname, emailid, num;
+            while (true)
             {
-                Console.WriteLine("Enter a valid first name : ");
-                fname = Console.ReadLine();
+                Console.WriteLine("Enter your First Name : ");
+                 fname = Console.ReadLine();
+                try
+                {
+                    if (!v.FirstNameValidation(fname))
+                    {
+                        throw new CustomException("Invalid first name");
+                    }
+                    break;
+                }
+                catch(CustomException ce)
+                {
+                    Console.WriteLine(ce.Message);
+                }
+               
             }
 
-            Console.WriteLine("Enter your Last Name : ");
-            string lname = Console.ReadLine();
-            while (!v.LastNameValidation(lname))
+            while (true)
             {
-                Console.WriteLine("Enter a valid last name : ");
-                lname = Console.ReadLine();
+                Console.WriteLine("Enter your Last Name : ");
+                 lname = Console.ReadLine();
+                try
+                {
+                    if (!v.LastNameValidation(lname))
+                    {
+                        throw new CustomException("Invalid last name");
+                    }
+                    break;
+                }
+                catch (CustomException ce)
+                {
+                    Console.WriteLine(ce.Message);
+                }
+
             }
 
-            Console.WriteLine("Enter your emailId : ");
-            string emailid = Console.ReadLine();
-            while (!v.EmailIDValidation(emailid))
+            while (true)
             {
-                Console.WriteLine("Enter a valid emailID : ");
-                emailid = Console.ReadLine();
+                Console.WriteLine("Enter your emailId : ");
+                 emailid = Console.ReadLine();
+                try
+                {
+                    if (!v.EmailIDValidation(emailid))
+                    {
+                        throw new CustomException("Invalid emailId");
+                    }
+                    break;
+                }
+                catch (CustomException ce)
+                {
+                    Console.WriteLine(ce.Message);
+                }
             }
 
-            Console.WriteLine("Enter your mobile number : ");
-            string num = Console.ReadLine();
-            while (!v.MobileNumberValidation(num))
+            while (true)
             {
-                Console.WriteLine("Enter a valid mobile number : ");
-                num = Console.ReadLine();
+                Console.WriteLine("Enter your mobile number : ");
+                 num = Console.ReadLine();
+                try
+                {
+                    if (!v.MobileNumberValidation(num))
+                    {
+                        throw new CustomException("Invalid mobile number");
+                    }
+                    break;
+                }
+
+                catch (CustomException ce)
+                {
+                    Console.WriteLine(ce.Message);
+                }
             }
 
-            Console.WriteLine("Enter a password : ");
-            string pswrd = Console.ReadLine();
-            while (!v.PasswordValidation(pswrd))
+            while (true)
             {
-                Console.WriteLine("Enter a valid password : ");
-                pswrd = Console.ReadLine();
+                Console.WriteLine("Enter a password : ");
+                string pswrd = Console.ReadLine();
+                try
+                {
+                    if (!v.PasswordValidation(pswrd))
+                    {
+                        throw new CustomException("Invalid password"); 
+                    }
+                    break;
+                }
+                catch (CustomException ce)
+                {
+                    Console.WriteLine(ce.Message);
+                }
             }
+            
 
             Console.WriteLine("Registration Successful.");
             Console.WriteLine("Name :" + fname + " " + lname);
