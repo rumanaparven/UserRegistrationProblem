@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace UserRegistrationProblem
 {
@@ -6,23 +8,27 @@ namespace UserRegistrationProblem
     {
         static void Main(string[] args)
         {
-            Validation v = new Validation();
-            string fname, lname, emailid, num;
+            bool valid;
+            Annotations anotation = new Annotations();
+            ValidationContext context = new ValidationContext(anotation, null, null);
+            List<ValidationResult> result = new List<ValidationResult>();
             while (true)
             {
                 Console.WriteLine("Enter your First Name : ");
-                 fname = Console.ReadLine();
-                try
+                anotation.firstName = Console.ReadLine();
+                valid = Validator.TryValidateObject(anotation, context, result, true);
+                if (!valid)
                 {
-                    if (!v.FirstNameValidation(fname))
+                    foreach (ValidationResult results in result)
                     {
-                        throw new CustomException("Invalid first name");
+
+                        Console.WriteLine("{0}", results.ErrorMessage);
                     }
-                    break;
+                    
                 }
-                catch(CustomException ce)
+                else
                 {
-                    Console.WriteLine(ce.Message);
+                    break;
                 }
                
             }
@@ -30,18 +36,19 @@ namespace UserRegistrationProblem
             while (true)
             {
                 Console.WriteLine("Enter your Last Name : ");
-                 lname = Console.ReadLine();
-                try
+                anotation.lastName = Console.ReadLine();
+                valid = Validator.TryValidateObject(anotation, context, result, true);
+                if (!valid)
                 {
-                    if (!v.LastNameValidation(lname))
+                    foreach (ValidationResult results in result)
                     {
-                        throw new CustomException("Invalid last name");
+                        Console.WriteLine("{0}", results.ErrorMessage);
                     }
-                    break;
+
                 }
-                catch (CustomException ce)
+                else
                 {
-                    Console.WriteLine(ce.Message);
+                    break;
                 }
 
             }
@@ -49,63 +56,65 @@ namespace UserRegistrationProblem
             while (true)
             {
                 Console.WriteLine("Enter your emailId : ");
-                 emailid = Console.ReadLine();
-                try
+                anotation.emailID = Console.ReadLine();
+                valid = Validator.TryValidateObject(anotation, context, result, true);
+                if (!valid)
                 {
-                    if (!v.EmailIDValidation(emailid))
+                    foreach (ValidationResult results in result)
                     {
-                        throw new CustomException("Invalid emailId");
+                        Console.WriteLine("{0}", results.ErrorMessage);
                     }
-                    break;
+
                 }
-                catch (CustomException ce)
+                else
                 {
-                    Console.WriteLine(ce.Message);
+                    break;
                 }
             }
 
             while (true)
             {
                 Console.WriteLine("Enter your mobile number : ");
-                 num = Console.ReadLine();
-                try
+                anotation.phoneNumber = Console.ReadLine();
+                valid = Validator.TryValidateObject(anotation, context, result, true);
+                if (!valid)
                 {
-                    if (!v.MobileNumberValidation(num))
+                    foreach (ValidationResult results in result)
                     {
-                        throw new CustomException("Invalid mobile number");
+                        Console.WriteLine("{0}", results.ErrorMessage);
                     }
-                    break;
-                }
 
-                catch (CustomException ce)
+                }
+                else
                 {
-                    Console.WriteLine(ce.Message);
+                    break;
                 }
             }
 
             while (true)
             {
                 Console.WriteLine("Enter a password : ");
-                string pswrd = Console.ReadLine();
-                try
+                anotation.password = Console.ReadLine();
+                valid = Validator.TryValidateObject(anotation, context, result, true);
+                if (!valid)
                 {
-                    if (!v.PasswordValidation(pswrd))
+                    foreach (ValidationResult results in result)
                     {
-                        throw new CustomException("Invalid password"); 
+                        Console.WriteLine("{0}", results.ErrorMessage);
                     }
-                    break;
+
                 }
-                catch (CustomException ce)
+                else
                 {
-                    Console.WriteLine(ce.Message);
+                    break;
                 }
             }
             
 
             Console.WriteLine("Registration Successful.");
-            Console.WriteLine("Name :" + fname + " " + lname);
-            Console.WriteLine("Email ID : " + emailid);
-            Console.WriteLine("Contact Number : " + num);
+            Console.WriteLine("Name :" + anotation.firstName + " " + anotation.lastName);
+            Console.WriteLine("Email ID : " + anotation.emailID);
+            Console.WriteLine("Contact Number : " + anotation.phoneNumber);
         }
     }
 }
