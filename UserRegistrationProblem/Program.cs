@@ -8,23 +8,19 @@ namespace UserRegistrationProblem
     {
         static void Main(string[] args)
         {
-            bool valid;
-            Annotations anotation = new Annotations();
-            ValidationContext context = new ValidationContext(anotation, null, null);
-            List<ValidationResult> result = new List<ValidationResult>();
+            string firstName, lastName, emailID, phoneNumber,password;
+
+
+
             while (true)
             {
                 Console.WriteLine("Enter your First Name : ");
-                anotation.firstName = Console.ReadLine();
-                valid = Validator.TryValidateObject(anotation, context, result, true);
+                 firstName = Console.ReadLine();
+                bool valid = Validation.validate(firstName, "^[A-Z][a-z]{2,}$");
                 if (!valid)
                 {
-                    foreach (ValidationResult results in result)
-                    {
-
-                        Console.WriteLine("{0}", results.ErrorMessage);
-                    }
-                    
+                    Console.WriteLine("Invalid Input");
+                   
                 }
                 else
                 {
@@ -36,14 +32,12 @@ namespace UserRegistrationProblem
             while (true)
             {
                 Console.WriteLine("Enter your Last Name : ");
-                anotation.lastName = Console.ReadLine();
-                valid = Validator.TryValidateObject(anotation, context, result, true);
+                lastName = Console.ReadLine();
+                bool valid = Validation.validate(lastName, "^[A-Z][a-z]{2,}$");
                 if (!valid)
                 {
-                    foreach (ValidationResult results in result)
-                    {
-                        Console.WriteLine("{0}", results.ErrorMessage);
-                    }
+                    Console.WriteLine("Invalid Input");
+                    
 
                 }
                 else
@@ -56,14 +50,12 @@ namespace UserRegistrationProblem
             while (true)
             {
                 Console.WriteLine("Enter your emailId : ");
-                anotation.emailID = Console.ReadLine();
-                valid = Validator.TryValidateObject(anotation, context, result, true);
+                emailID = Console.ReadLine();
+                bool valid = Validation.validate(emailID, "^([a-z\\d]+)(\\.([a-z\\d_+-\\.]+))?@([a-z\\d-]+)\\.([a-z]{2,3})((\\.[a-z]{2})?)$");
                 if (!valid)
                 {
-                    foreach (ValidationResult results in result)
-                    {
-                        Console.WriteLine("{0}", results.ErrorMessage);
-                    }
+                    Console.WriteLine("Invalid Input");
+                   
 
                 }
                 else
@@ -75,14 +67,12 @@ namespace UserRegistrationProblem
             while (true)
             {
                 Console.WriteLine("Enter your mobile number : ");
-                anotation.phoneNumber = Console.ReadLine();
-                valid = Validator.TryValidateObject(anotation, context, result, true);
+                phoneNumber = Console.ReadLine();
+                bool valid = Validation.validate(phoneNumber, "^[+][0-9]{2}\\s[7-9]{1}[0-9]{9}$");
                 if (!valid)
                 {
-                    foreach (ValidationResult results in result)
-                    {
-                        Console.WriteLine("{0}", results.ErrorMessage);
-                    }
+                    Console.WriteLine("Invalid Input");
+                    
 
                 }
                 else
@@ -94,14 +84,12 @@ namespace UserRegistrationProblem
             while (true)
             {
                 Console.WriteLine("Enter a password : ");
-                anotation.password = Console.ReadLine();
-                valid = Validator.TryValidateObject(anotation, context, result, true);
+                password = Console.ReadLine();
+                bool valid = Validation.validate(password, @"(^(?=.*[A-Z])(?=.*[0-9])(?=.*[@#+-\._])[A-Za-z0-9@#-+\._]{8,}$)");
                 if (!valid)
                 {
-                    foreach (ValidationResult results in result)
-                    {
-                        Console.WriteLine("{0}", results.ErrorMessage);
-                    }
+                    Console.WriteLine("Invalid Input");
+                   
 
                 }
                 else
@@ -112,9 +100,9 @@ namespace UserRegistrationProblem
             
 
             Console.WriteLine("Registration Successful.");
-            Console.WriteLine("Name :" + anotation.firstName + " " + anotation.lastName);
-            Console.WriteLine("Email ID : " + anotation.emailID);
-            Console.WriteLine("Contact Number : " + anotation.phoneNumber);
+            Console.WriteLine("Name :" + firstName + " " + lastName);
+            Console.WriteLine("Email ID : " + emailID);
+            Console.WriteLine("Contact Number : " + phoneNumber);
         }
     }
 }
